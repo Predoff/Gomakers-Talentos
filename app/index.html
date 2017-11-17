@@ -1,18 +1,25 @@
  <!DOCTYPE html>
-<html>
+ <html ng-app>
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
 
     <title>Almoço da Firma</title>
 
-    <link rel="stylesheet" href="bower_components/normalize-css/normalize.css" type="text/css">
+    <!-- build:css css/style.min.css -->
+    <link rel="stylesheet" href="../bower_components/normalize-css/normalize.css" type="text/css">
     <link rel="stylesheet" href="css/style.css" type="text/css">
+    <!-- endbuild -->
+
+    <!-- build:js js/combined.js -->
+    <script src="../bower_components/angular/angular.js"></script>
+    <!-- endbuild -->
   </head>
 
   <body>
     <header>
       <h1>Almoço da Firrrrrrrmaaa</h1>
+      <h2>2 + 2 = {{ 2 + 3}}</h2>
     </header>
 
     <nav>
@@ -24,7 +31,7 @@
 
     <section>
       <form>
-        <img alt="Nome restaurante" src="public/data/images/img10.jpg">
+        <img alt="Nome restaurante" src="../public/data/images/img10.jpg">
         <button type="button" class="btn-success" name="gostei">Gostei</button>
         <button type="button" class="btn-danger" name="nao-gostei">Nao Gostei</button>
       </form>

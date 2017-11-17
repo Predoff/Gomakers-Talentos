@@ -1,0 +1,32 @@
+{
+  "name": "gomakers-talentos",
+  "version": "1.0.0",
+  "description": "> Esse � um reposit�rio com as regras para cria��o do projeto para vaga de desenvolvedor front-end na GoMakers. > A vaga � para trabalho presencial na GoMakers, localizada na cidade de Valinhos/Campinas e Regi�o.",
+  "main": "index.js",
+  "dependencies": {
+    "bower": "^1.8.2",
+    "gulp": "^3.9.1"
+  },
+  "devDependencies": {
+    "gulp-clean-css": "^3.9.0",
+    "gulp-if": "^2.0.2",
+    "gulp-uglify": "^3.0.0",
+    "gulp-useref": "^3.1.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/predoff/Gomakers-Talentos.git"
+  },
+  "keywords": [
+    "almoco"
+  ],
+  "author": "Pedro Souza",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/predoff/Gomakers-Talentos/issues"
+  },
+  "homepage": "https://github.com/predoff/Gomakers-Talentos#readme"
+}
