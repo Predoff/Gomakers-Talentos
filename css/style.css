@@ -1,0 +1,79 @@
+html {
+  background-color: #e65154;
+  color: #ffffff;
+  font-family: Montserrat;
+  font-weight: bold;
+  text-align: center;
+}
+
+html a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+body {
+  /* centralizar */
+  margin: 0px auto;
+
+  max-width: 642px; /* tamanho da imagem do restaurante + 20px de folga */
+}
+
+h1 {
+  font-size: 1.8em;
+  line-height: 1.5;
+}
+
+/*=== NAV ===*/
+
+nav {
+  margin: 0 auto;
+  white-space: nowrap;
+}
+
+nav a {
+  font-size: 1em;
+  letter-spacing: 0.5em;
+}
+
+nav a:first-child {
+  text-align: left;
+}
+
+nav a:last-child {
+  text-align: right;
+  margin-right: -.5em;
+}
+
+/*=== SECTION ===*/
+
+section {
+  margin-top: 20px;
+}
+
+img {
+  border: 0.7em solid #ffffff;
+  border-radius: 3px;
+  max-width: 100%;
+}
+
+button {
+  border-radius: 15px;
+  font-size: 16px;
+  height: 68px;
+  width: 127px;
+}
+
+.btn-success {
+  background-color: #5ce66b;
+  color: #414141;
+}
+
+.btn-danger {
+  background-color: #a9150b;
+}
+
+.grid-1-of-3 {
+  display: inline-block;
+  width: 33.333333%;
+}
+

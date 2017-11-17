@@ -1,5 +1,5 @@
 {
-  "name": "Almoço da Firma",
+  "name": "almoco-da-firma",
   "homepage": "https://github.com/predoff/Gomakers-Talentos",
   "authors": [
     "Pedro Souza <predoff@gmail.com>"
@@ -14,5 +14,8 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "dependencies": {
+    "normalize-css": "^7.0.0"
+  }
 }
