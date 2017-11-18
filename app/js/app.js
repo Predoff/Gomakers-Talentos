@@ -3,6 +3,15 @@
   
   app.controller("AlmocoController", function(){
     this.restaurants = restaurantsList; 
+    this.tab = 1;
+
+    this.selectedTab = function(setTab) { 
+      this.tab = setTab; 
+    };
+
+    this.isSelected = function(checkTab) {
+      return this.tab === checkTab;
+    }
   });
 
   var restaurantsList = [

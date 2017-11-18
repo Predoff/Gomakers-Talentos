@@ -17,34 +17,33 @@
     <!-- endbuild -->
   </head>
 
-  <body ng-app="almoco">
+  <body ng-app="almoco" ng-controller="AlmocoController as almoco">
     <header>
       <h1>Almoço da Firrrrrrrmaaa</h1>
     </header>
 
     <nav>
-      <a class="grid-1-of-3" href="index.html">TODOS</a>
-      <a class="grid-1-of-3" href="votados.html">+ VOTADOS</a>
-      <a class="grid-1-of-3" href="votados.html" >- VOTADOS</a>
+      <a class="grid-1-of-3" ng-class="{ active: isSelected(1) }" ng-click="almoco.selectTab(1)" href="index.html">TODOS</a>
+      <a class="grid-1-of-3" ng-class="{ active: isSelected(2) }" ng-click="almoco.selectTab(2)" href="votados.html">+ VOTADOS</a>
+      <a class="grid-1-of-3" ng-class="{ active: isSelected(3) }" ng-click="almoco.selectTab(3)" href="votados.html" >- VOTADOS</a>
     </nav>
 
-    <section ng-controller="AlmocoController as almoco">
-      <form>
+    <section>
+      <form ng-show="isSelected(1)">
         <img alt="Nome restaurante" src="../images/resources/img10.jpg">
         <button type="button" class="btn-success" name="gostei">Gostei</button>
         <button type="button" class="btn-danger" name="nao-gostei">Nao Gostei</button>
       </form>
 
-      <div class="grid-1-of-3" ng-repeat="restaurant in almoco.restaurants | limitTo: 6 | orderBy:'likes':true">
+      <div class="grid-1-of-3" ng-show="isSelected(2)" ng-repeat="restaurant in almoco.restaurants | limitTo: 6 | orderBy:'likes':true">
         <img alt="{{restaurant.nama}}" src="../{{restaurant.url}}">
         <p>{{restaurant.name}} - {{restaurant.likes}}</p>
       </div>
 
-      <div class="grid-1-of-3" ng-repeat="restaurant in almoco.restaurants | limitTo: 6 | orderBy:'dislikes':true">
+      <div class="grid-1-of-3" ng-show="isSelected(3)" ng-repeat="restaurant in almoco.restaurants | limitTo: 6 | orderBy:'dislikes':true">
         <img alt="{{restaurant.nama}}" src="../{{restaurant.url}}">
         <p>{{restaurant.name}} - {{restaurant.likes}}</p>
       </div>
-
     </section>
   </body>
 </html>
