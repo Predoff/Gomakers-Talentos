@@ -1,9 +1,10 @@
 (function(){
   var app = angular.module('almoco-da-firma', []);
-  
+
   app.controller("AlmocoController", function(){
     this.restaurants = restaurantsList; 
     this.tab = 1;
+    this.currentIndexRestaurant = 0;
 
     this.selectTab = function(setTab) { 
       this.tab = setTab; 
@@ -11,7 +12,32 @@
 
     this.isSelected = function(checkTab) {
       return this.tab === checkTab;
-    }
+    };
+
+    this.like = function(x) {
+      this.restaurants[this.currentIndexRestaurant].likes++;
+      this.setNextRestaurant();
+    };
+
+    this.dislike = function() {
+      this.restaurants[this.currentIndexRestaurant].dislikes++;
+      this.setNextRestaurant();
+    };
+
+    this.setNextRestaurant = function() {
+      console.log(this.restaurants.length);
+      if(this.restaurants.length - 1 === this.currentIndexRestaurant) {
+        this.currentIndexRestaurant = 0;
+      }
+      else {
+        this.currentIndexRestaurant++;
+      }
+    };
+
+    this.currentRestaurant = function(indexRestaurant) {
+      return this.currentIndexRestaurant === indexRestaurant;
+    };
+
   });
 
   var restaurantsList = [

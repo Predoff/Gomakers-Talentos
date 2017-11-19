@@ -29,10 +29,12 @@
     </nav>
 
     <section>
-      <form ng-show="almoco.isSelected(1)">
-        <img alt="Nome restaurante" src="../images/resources/img10.jpg">
-        <button type="button" class="btn-success" name="gostei">Gostei</button>
-        <button type="button" class="btn-danger" name="nao-gostei">Nao Gostei</button>
+      <form ng-show="almoco.isSelected(1)" ng-repeat="restaurant in almoco.restaurants">
+        <div ng-show="almoco.currentRestaurant($index)">
+          <img alt="{{restaurant.name}}" src="../{{restaurant.url}}">
+          <button ng-click="almoco.like(restaurant)" type="submit" class="btn-success" name="gostei">Gostei</button>
+          <button ng-click="almoco.dislike(restaurant)" type="submit" class="btn-danger" name="nao-gostei">Nao Gostei</button>
+        </div>
       </form>
 
       <div class="grid-1-of-3" ng-show="almoco.isSelected(2)" ng-repeat="restaurant in almoco.restaurants | orderBy:'likes':true | limitTo: 6">
