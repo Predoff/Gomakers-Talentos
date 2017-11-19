@@ -99,6 +99,22 @@
     "dislikes": 3
   }
 ];
+  
+ })();
+ /*
+  {
+    "name": "El Tambo",
+    "url": "images/resources/img1.jpg",
+    "likes": 16,
+    "dislikes": 5
+  },
+  {
+    "name": "McDonalds",
+    "url": "images/resources/img3.jpg",
 
-})();
+    "likes": 0,
+    "dislikes": 0
+  },
+  */
+
 
