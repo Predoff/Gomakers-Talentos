@@ -3,6 +3,7 @@
 
   app.controller("AlmocoController", function(){
     this.restaurants = restaurantsList; 
+
     this.tab = 1;
     this.currentIndexRestaurant = 0;
 
@@ -42,24 +43,11 @@
 
   var restaurantsList = [
   {
-    "name": "El Tambo",
-    "url": "images/resources/img1.jpg",
-    "likes": 16,
-    "dislikes": 5
-  },
-  {
     "name": "Fogão Mineiro",
     "url": "images/resources/img2.jpg",
 
     "likes": 0,
     "dislikes": 10
-  },
-  {
-    "name": "McDonalds",
-    "url": "images/resources/img3.jpg",
-
-    "likes": 0,
-    "dislikes": 0
   },
   {
     "name": "Burger King",

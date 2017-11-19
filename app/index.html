@@ -15,37 +15,60 @@
     <script src="../bower_components/angular/angular.js"></script>
     <script src="js/app.js"></script>
     <!-- endbuild -->
+
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:800" rel="stylesheet"> 
   </head>
 
   <body ng-app="almoco-da-firma" ng-controller="AlmocoController as almoco">
     <header>
-      <h1>Almoço da Firrrrrrrmaaa</h1>
+      <h1>Almoço da Firrrrrrrmaaa!</h1>
     </header>
 
     <nav>
-      <a class="grid-1-of-3" ng-class="{ active: almoco.isSelected(1) }" ng-click="almoco.selectTab(1)" href>TODOS</a>
-      <a class="grid-1-of-3" ng-class="{ active: almoco.isSelected(2) }" ng-click="almoco.selectTab(2)" href>+ VOTADOS</a>
-      <a class="grid-1-of-3" ng-class="{ active: almoco.isSelected(3) }" ng-click="almoco.selectTab(3)" href >- VOTADOS</a>
+      <ul>
+        <li class="grid-1-of-3">
+          <a ng-class="{ active: almoco.isSelected(1) }" ng-click="almoco.selectTab(1)" href>TODOS</a>
+        </li>
+        <li class="grid-1-of-3">
+          <a ng-class="{ active: almoco.isSelected(2) }" ng-click="almoco.selectTab(2)" href>+ VOTADOS</a>
+        </li>
+        <li class="grid-1-of-3">
+          <a ng-class="{ active: almoco.isSelected(3) }" ng-click="almoco.selectTab(3)" href >- VOTADOS</a>
+        </li>
+      </ul>
+
     </nav>
 
     <section>
-      <form ng-show="almoco.isSelected(1)" ng-repeat="restaurant in almoco.restaurants">
-        <div ng-show="almoco.currentRestaurant($index)">
-          <img alt="{{restaurant.name}}" src="../{{restaurant.url}}">
-          <button ng-click="almoco.like(restaurant)" type="submit" class="btn-success" name="gostei">Gostei</button>
-          <button ng-click="almoco.dislike(restaurant)" type="submit" class="btn-danger" name="nao-gostei">Nao Gostei</button>
+
+      <!--- TODOS - Tab de votacao de restaurantes --->
+      <div class="tab-votacao">
+        <div ng-show="almoco.isSelected(1)" ng-repeat="restaurant in almoco.restaurants">
+          <div ng-show="almoco.currentRestaurant($index)">
+            <img alt="{{restaurant.name}}" src="../{{restaurant.url}}">
+            <p>{{ restaurant.name }}</p>
+            <button ng-click="almoco.like(restaurant)" type="submit" class="btn-success" name="gostei">GOSTEI</button>
+            <button ng-click="almoco.dislike(restaurant)" type="submit" class="btn-danger" name="nao-gostei">NÃO GOSTEI</button>
+          </div>
         </div>
-      </form>
-
-      <div class="grid-1-of-3" ng-show="almoco.isSelected(2)" ng-repeat="restaurant in almoco.restaurants | orderBy:'likes':true | limitTo: 6">
-        <img alt="{{restaurant.name}}" src="../{{restaurant.url}}">
-        <p>{{restaurant.name}} - {{restaurant.likes}}</p>
       </div>
 
+      <!--- MAIS VOTADOS - Tab dos 6 restaurantes com mais likes  --->
+      <div class="tab-mais-votados">
+        <div class="grid-1-of-3" ng-show="almoco.isSelected(2)" ng-repeat="restaurant in almoco.restaurants | orderBy:'likes':true | limitTo: 6">
+          <img alt="{{restaurant.name}}" src="../{{restaurant.url}}">
+          <p>{{restaurant.name}} - {{restaurant.likes}}</p>
+        </div>
+      </div>
+
+      <!--- MENOS TODOS - Tab dos 6 restaurantes com mais dislikes --->
+      <div class="tab-mais-dislikes">
+        <div class="grid-1-of-3" ng-show="almoco.isSelected(3)" ng-repeat="restaurant2 in almoco.restaurants | orderBy:'dislikes':true | limitTo: 6">
+          <img alt="{{restaurant2.name}}" src="../{{restaurant2.url}}"> <p>{{restaurant2.name}} - {{restaurant2.dislikes}}</p>
+        </div>
+      <div class="tab-mais-dislikes">
       <div class="grid-1-of-3" ng-show="almoco.isSelected(3)" ng-repeat="restaurant2 in almoco.restaurants | orderBy:'dislikes':true | limitTo: 6">
-        <img alt="{{restaurant2.name}}" src="../{{restaurant2.url}}">
-        <p>{{restaurant2.name}} - {{restaurant2.dislikes}}</p>
-      </div>
+
     </section>
   </body>
 </html>
