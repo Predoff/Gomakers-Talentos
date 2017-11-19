@@ -1,11 +1,11 @@
 (function(){
-  var app = angular.module('almoco', []);
+  var app = angular.module('almoco-da-firma', []);
   
   app.controller("AlmocoController", function(){
     this.restaurants = restaurantsList; 
     this.tab = 1;
 
-    this.selectedTab = function(setTab) { 
+    this.selectTab = function(setTab) { 
       this.tab = setTab; 
     };
 
@@ -26,7 +26,7 @@
     "url": "images/resources/img2.jpg",
 
     "likes": 0,
-    "dislikes": 0
+    "dislikes": 10
   },
   {
     "name": "McDonalds",
@@ -82,7 +82,7 @@
     "url": "images/resources/img10.jpg",
 
     "likes": 0,
-    "dislikes": 0
+    "dislikes": 3
   }
 ];
 
