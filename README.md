@@ -66,3 +66,12 @@ Se você é um Desenvolvedor FrontEnd e quer causar impacto na vida das pessoas co
 
 
 **Boa sorte e aguarde nosso convite para um café!**
+
+### Solução:
+
+1. Clone o repositório.
+2. Instale as dependências do node `npm install`.
+3. Instale as dependências do bower `bower install`.
+4. Gere os arquivos minificados `gulp html`.
+5. Execute o aplicativo `node index.js`/
+6. Acesse: [http://localhost:5000](http://localhost:5000) ou acesse o aplicativo hospedado no [heroku](https://almoco-da-firma.herokuapp.com)
