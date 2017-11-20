@@ -56,19 +56,34 @@
       <!--- MAIS VOTADOS - Tab dos 6 restaurantes com mais likes  --->
       <div class="tab-mais-votados">
         <div class="grid-1-of-3" ng-show="almoco.isSelected(2)" ng-repeat="restaurant in almoco.restaurants | orderBy:'likes':true | limitTo: 6">
-          <img alt="{{restaurant.name}}" src="../{{restaurant.url}}">
-          <p>{{restaurant.name}} - {{restaurant.likes}}</p>
+
+          <div class="container">
+            <img alt="{{restaurant.name}}" src="../{{restaurant.url}}">
+            <div class="container-info">
+              <div class="text">{{ restaurant.likes }}</div>
+            </div>
+          </div>
+
+          <p>{{restaurant.name}}</p>
+
         </div>
       </div>
 
       <!--- MENOS TODOS - Tab dos 6 restaurantes com mais dislikes --->
       <div class="tab-mais-dislikes">
-        <div class="grid-1-of-3" ng-show="almoco.isSelected(3)" ng-repeat="restaurant2 in almoco.restaurants | orderBy:'dislikes':true | limitTo: 6">
-          <img alt="{{restaurant2.name}}" src="../{{restaurant2.url}}"> <p>{{restaurant2.name}} - {{restaurant2.dislikes}}</p>
-        </div>
-      <div class="tab-mais-dislikes">
-      <div class="grid-1-of-3" ng-show="almoco.isSelected(3)" ng-repeat="restaurant2 in almoco.restaurants | orderBy:'dislikes':true | limitTo: 6">
+        <div class="grid-1-of-3" ng-show="almoco.isSelected(3)" ng-repeat="restaurant in almoco.restaurants | orderBy:'dislikes':true | limitTo: 6">
 
+           <div class="container">
+             <img alt="{{restaurant.name}}" src="../{{restaurant.url}}">
+             <div class="container-info">
+                <div class="text">{{ restaurant.dislikes }}</div>
+              </div>
+           </div>
+
+          <p>{{restaurant.name}}</p>
+
+        </div>
+      </div>
     </section>
   </body>
 </html>
