@@ -89,6 +89,7 @@ section {
   border: 12px solid #ffffff;
   border-radius: 3px;
   height: 136.767px;
+  margin: 0px auto;
 }
 
 .container img {
@@ -108,9 +109,9 @@ section {
   opacity: 0;
   position: absolute;
   top: 50%;
-  left: 45.76271186440678%;
-  transform: translate(45.76271186440678%, -50%);
-  -ms-transform: translate(-50%, -50%);
+  left: 42%;
+  transform: translate(42%, -50%);
+  -ms-transform: translate(-42%, -50%);
 }
 
 button {
@@ -138,7 +139,7 @@ button {
   width: 33.333333%;
 }
 
-@media (max-width: 320px) {
+@media (max-width: 767px) {
   .tab-votacao img {
     max-width: 80%;
   }
@@ -155,5 +156,10 @@ button {
 
   .container {
     margin: 0 auto;
+  }
+
+  button {
+    display: block;
+    margin: 10px  auto;
   }
 }
